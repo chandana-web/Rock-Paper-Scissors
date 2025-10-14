@@ -165,12 +165,10 @@ body{
     margin-top: 20px;
 }
 
-footer{
-    /* margin-bottom: 0; */
-    margin-left: 950px;
-}
+
 
 .rules-btn{
+  margin-left: 950px;
     background: transparent;
     border: 2px solid white;
     color: white;
