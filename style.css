@@ -1,0 +1,425 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: #8CC461;
+    margin: 0;
+    color: white;
+    text-align: center;
+    
+}
+
+.game-container{
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    
+    
+}
+
+.scoreboard{
+
+    border: 2.5px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+.title h1{
+    font-size: 24px;
+    text-align:start;
+    line-height: 40px;
+
+}
+
+.scores{
+    display: flex;
+    gap: 15px;
+}
+
+.score-box{
+    background-color: white;
+    
+    border-radius: 8px;
+    width: 139px;
+    height: 128px;
+    padding: 6px;
+    
+    
+
+}
+
+.score-box p{
+    margin: 0;
+    font-size: 20px;
+    line-height: 25px;
+    /* font-weight: 17px; */
+    color: #656565;
+    
+}
+
+.score-box h2{
+    margin: 5px;
+    /* font-weight: 20px; */
+    color: #252525;
+    font-size: 60px;
+   ;
+}
+
+/* Triangle Layout */
+.triangle{
+    position: relative;
+    width: 300px;
+    height: 260px;
+    margin: 50px auto;
+}
+
+/* Triangle lines */
+
+.line, .line2, .line3{
+    position: absolute;
+    background-color: #2b2b2b;
+    height: 6px;
+    border-radius: 6px;
+}
+
+.line{
+    width: 190px;
+    top: 50px;
+    left: 70px;
+    transform: rotate(0deg);
+}
+
+.line2{
+    width: 160px;
+    top: 130px;
+    left: 120px;
+    transform: rotate(120deg);
+}
+
+.line3{
+    width: 160px;
+    top: 130px;
+    right: 120px;
+    transform: rotate(240deg);
+}
+
+.choice{
+    position: absolute;
+    border: 10px solid transparent;
+    border-radius: 50%;
+    background: white;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.choice img{
+    width: 45px;
+}
+
+.choice:hover{
+    transform: scale(1.1);
+}
+
+.choice.rock{
+    top: 0;
+    left: 0;
+    border-color: #0074d9 ;
+}
+
+.choice.scissors{
+    top: 0;
+    right: 0;
+    border-color:#9c27b0   ;
+}
+
+.choice.paper{
+    bottom: 0;
+    left: 100px;
+    border-color:#ff9800;
+}
+
+.results .pick .choice {
+  position: static;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+}
+
+
+
+/* Result text */
+.result-text{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+footer{
+    /* margin-bottom: 0; */
+    margin-left: 950px;
+}
+
+.rules-btn{
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.rules-btn:hover{
+    background: white;
+    color: #333;
+}
+
+/* Popup */
+.popup{
+    position: fixed;
+    /* top: 0; left: 0; */
+    right: 10px; bottom: 60px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.hidden{
+    display: none;
+}
+
+.popup-content{
+    background: #004429;
+    color: white;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width: 220px;
+    height: 250px;
+    position: relative;
+    text-align: left;
+    border: 4px solid white;
+    font-size: 12px;
+}
+
+.popup-content h2{
+    text-align: center;
+}
+
+.popup-content ul{
+    /* padding-left: 20px; */
+    list-style: square;
+    padding-top: 0;
+    margin: 0;
+    
+    
+}
+
+ul li::marker{
+    color: #FFD600;
+    font-size: 20px;
+    
+}
+
+.close-btn{
+    position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  border: 4px solid white;
+}
+
+
+
+.result-container{
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    
+    
+}
+
+.results {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  margin-top: 80px;
+  margin-left: 60px;
+  gap: 100px;
+  position: relative;
+  /* overflow: hidden; */
+  
+}
+
+.results > div {
+  flex: 1;
+ 
+}
+.pick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;  
+}
+.pick .choice {
+  position: static;
+  transform: none;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  /* background: white; */
+}
+
+.results > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.result-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.main-result {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.sub-result {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  color: #ffffffcc; /* slightly lighter white */
+}
+
+/*Winner glow animation */
+.results .pick .choice.winner-glow {
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+
+
+.results .pick .choice.winner-glow::before,
+.results .pick .choice.winner-glow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: radial-gradient(circle, rgba(252, 253, 252, 0.7) 0%, rgba(0, 105, 21, 0.2) 50%);
+  z-index: -1;
+  pointer-events: none;
+  animation: ripple 2s ease-in infinite;
+}
+
+/* staggered second ring */
+.results .pick .choice.winner-glow::after {
+  animation-delay: 0.6s;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.3);
+  }
+}
+
+
+
+#playAgainBtn {
+  background: white;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  
+  margin-top: 20px;
+}
+.footer-buttons {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.rules-btn,
+.next-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rules-btn:hover,
+.next-btn:hover {
+  background: white;
+  color: #333;
+}
+
+.hidden {
+  display: none;
+}
+
+.hurray-container{
+    max-width: 800px;
+    margin: auto;
+    /* padding: 20px; */
+}
+.hurray-container img{
+    margin-top: 30px;
+    height: 300px;
+}
+
+.hurray-container h1{
+    font-size: 80px;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
+.hurray-container p{
+    margin-top: 3px;
+    font-size: 35px;
+    /* margin-bottom: 25px; */
+}
+
+

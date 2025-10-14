@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hurray</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="hurray-page">
+  <div class="hurray-container">
+    <img src="hurrayy.png" alt="Trophy" class="trophy" />
+    <h1>HURRAY!!</h1>
+    <p>YOU WON THE GAME</p>
+    <button id="playAgainBtn">PLAY AGAIN</button>
+  </div>
+
+  <footer class="footer-buttons">
+    <button id="rulesBtn" class="rules-btn">RULES</button>
+  </footer>
+
+  <!-- Rules Popup -->
+  <div id="rulesPopup" class="popup hidden">
+    <div class="popup-content">
+      <h2>Game Rules</h2>
+      <ul>
+        <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+        <li>Agree ahead of time whether you'll count off "rock, paper, scissors, shoot." or just "rock, paper, scissors."</li>
+        <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+        <li>If both players laydown the same hand, each player lays down another hand.</li>
+      </ul>
+      <button id="closeRules" class="close-btn">X</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("playAgainBtn").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+
+    document.getElementById("rulesBtn").addEventListener("click", () => {
+      document.getElementById("rulesPopup").classList.remove("hidden");
+    });
+
+    document.getElementById("closeRules").addEventListener("click", () => {
+      document.getElementById("rulesPopup").classList.add("hidden");
+    });
+  </script>
+</body>
+</html>

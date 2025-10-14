@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="result-container">
+    <header class="scoreboard">
+            <div class="title">
+                <h1>ROCK<br>PAPER<br>SCISSORS</h1>
+            </div>
+            <div class="scores">
+                <div class="score-box">
+                    <p>COMPUTER SCORE</p>
+                    <h2 id="computerScore">0</h2>
+                </div>
+                <div class="score-box">
+                    <p>YOUR<br>SCORE</p>
+                    <h2 id="playerScore">0</h2>
+                </div>
+            </div>
+        </header>
+
+    <div class="results">
+      <div >
+        <p>YOU PICKED</p>
+        <div class="pick"  id="playerPick" ></div>
+      </div>
+      <div class="result-text-container">
+        <p id="mainResult" class="main-result"></p>
+        <p id="subResult" class="sub-result"></p>
+        <button id="playAgainBtn">PLAY AGAIN</button>
+      </div>
+      <div>
+        <p>PC PICKED</p>
+        <div class="pick" id="pcPick"></div>
+      </div>
+    </div>
+  </div>
+
+
+        
+
+<!-- Footer buttons -->
+  <footer class="footer-buttons">
+    <button id="rulesBtn" class="rules-btn">RULES</button>
+    <button id="nextBtn" class="next-btn hidden">NEXT</button>
+  </footer>
+
+<!-- Rules Popup -->
+  <div id="rulesPopup" class="popup hidden">
+    <div class="popup-content">
+      <h2>Game Rules</h2>
+      <ul>
+        <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+        <li>Agree ahead of time whether you'll count off "rock, paper, scissors, shoot." or just "rock, paper, scissors."</li>
+        <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+        <li>If both players laydown the same hand, each player lays down another hand.</li>
+      </ul>
+      <button id="closeRules" class="close-btn">X</button>
+    </div>
+  </div>
+
+    </div>
+</div>
+
+<script>
+  const playScore = localStorage.getItem("playerScore") || 0;
+  const computerScore = localStorage.getItem("computerScore") || 0;
+
+  document.getElementById("playerScore").textContent = playScore;
+  document.getElementById("computerScore").textContent = computerScore;
+
+  const result = localStorage.getItem("result");
+  const playerChoice = localStorage.getItem("playerChoice");
+  const pcChoice = localStorage.getItem("pcChoice");
+
+  const mainResult = document.getElementById("mainResult");
+  const subResult = document.getElementById("subResult");
+
+if (result === "YOU WIN") {
+  mainResult.textContent = "YOU WIN";
+  subResult.textContent = "AGAINST PC";
+  
+} else if (result === "YOU LOSE") {
+  mainResult.textContent = "YOU LOSE";
+  subResult.textContent = "AGAINST PC";
+} else {
+   mainResult.textContent = "TIE UP";
+  document.getElementById("playAgainBtn").textContent = "REPLAY";
+}
+
+
+  // Function to render the full choice div (circle + color + image)
+  function renderChoice(elementId, choice) {
+    const div = document.getElementById(elementId);
+    div.innerHTML = `
+      <div class="choice ${choice}">
+        <img src="${choice === "rock" ? "rock.jpeg" : choice === "paper" ? "paper.png" : "scissors.png"}" alt="${choice}">
+      </div>
+    `;
+  }
+
+  renderChoice("playerPick", playerChoice);
+  renderChoice("pcPick", pcChoice);
+
+   if (result === "YOU WIN") {
+    document.querySelector("#playerPick .choice").classList.add("winner-glow");
+  } else if (result === "YOU LOSE") {
+    document.querySelector("#pcPick .choice").classList.add("winner-glow");
+  }
+
+  // Show "Next" button if the player wins
+  if (result === "YOU WIN") {
+    document.getElementById("nextBtn").classList.remove("hidden");
+  }
+
+  document.getElementById("playAgainBtn").addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+
+  document.getElementById("closeRules").addEventListener("click", () => {
+    document.getElementById("rulesPopup").classList.add("hidden");
+  });
+
+  document.getElementById("rulesBtn").addEventListener("click", () => {
+    document.getElementById("rulesPopup").classList.remove("hidden");
+  });
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    window.location.href = "hurray.html";
+  });
+</script>
+
+    
+</body>
+</html>
