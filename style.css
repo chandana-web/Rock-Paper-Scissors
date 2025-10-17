@@ -414,8 +414,8 @@ ul li::marker{
     
 .img-container{
   position: relative;
-  width: 500px;
-  height: 300px;
+  width: 480px;
+  height: 280px;
   margin-left: 150px;
   margin-top: 60px;
 }
