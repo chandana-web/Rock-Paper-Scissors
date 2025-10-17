@@ -136,10 +136,16 @@ body{
     border-color: #0074d9 ;
 }
 
+
+
 .choice.scissors{
     top: 0;
     right: 0;
     border-color:#9c27b0   ;
+}
+
+.choice.scissors img{
+  width: 30px;
 }
 
 .choice.paper{
