@@ -414,8 +414,8 @@ ul li::marker{
     
 .img-container{
   position: relative;
-  width: 440px;
-  height: 240px;
+  width: 450px;
+  height: 250px;
   margin-left: 150px;
   margin-top: 50px;
 }
@@ -426,9 +426,9 @@ ul li::marker{
 .img-overlay{
   position: absolute;
   bottom: 0;
-  left: 145px;
-  width: 160px;
-  height: 161px;
+  left: 130px;
+  width: 150px;
+  height: 151px;
 }
 
 .hurray-container h1{
