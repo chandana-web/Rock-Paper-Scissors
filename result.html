@@ -99,7 +99,7 @@ if (result === "YOU WIN") {
     const div = document.getElementById(elementId);
     div.innerHTML = `
       <div class="choice ${choice}">
-        <img src="${choice === "rock" ? "rock.jpeg" : choice === "paper" ? "paper.png" : "scissors.png"}" alt="${choice}">
+        <img src="${choice === "rock" ? "./assets/rockHand.png" : choice === "paper" ? "./assets/paperHand.png" : "./assets/scissorsHand.png"}" alt="${choice}">
       </div>
     `;
   }

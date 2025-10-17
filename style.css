@@ -405,21 +405,36 @@ ul li::marker{
     margin: auto;
     /* padding: 20px; */
 }
-.hurray-container img{
-    margin-top: 25px;
-    height: 280px;
+    
+.img-container{
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin-left: 150px;
+  margin-top: 60px;
+}
+.bg{
+  height: 100%;
+  width: 100%;
+}
+.img-overlay{
+  position: absolute;
+  bottom: 0;
+  left: 155px;
+  width: 200px;
+  height: 201px;
 }
 
 .hurray-container h1{
-    font-size: 70px;
+    font-size: 90px;
     margin-bottom: 0;
-    margin-top: 2px;
+    margin-top: 20px;
 }
 
 .hurray-container p{
-    margin-top: 3px;
-    font-size: 35px;
-    /* margin-bottom: 25px; */
+    margin-top: 0;
+    font-size: 40px;
+    margin-bottom: 0;
 }
 
 
